@@ -1,7 +1,6 @@
 import homeLogo from '../../assets/home.png'
 import './Home.css';
 
-
 function Home() {
     return (
         <>
@@ -19,10 +18,11 @@ function Home() {
   
             <div className="flex justify-center ">
               <img src={homeLogo} alt="" className='w-2/3' />
+      
             </div>
           </div>
         </div>
-      
+        
       </>
     );
 }
