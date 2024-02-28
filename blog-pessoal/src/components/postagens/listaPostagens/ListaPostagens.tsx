@@ -5,6 +5,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Postagem from '../../../models/Postagem';
 import { buscar } from '../../../services/Service';
 import CardPostagem from '../cardPostagem/CardPostagem';
+import {toastAlert} from '../../../utils/ToastAlert'
 
 function ListaPostagens() {
   const [postagens, setPostagens] = useState<Postagem[]>([]);
@@ -16,7 +17,7 @@ function ListaPostagens() {
 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa estar logado');
+      toastAlert('Você precisa estar logado', 'info');
       navigate('/');
     }
   }, [token]);
@@ -39,6 +40,7 @@ function ListaPostagens() {
   useEffect(() => {
     buscarPostagens();
   }, [postagens.length]);
+
   return (
     <>
       {postagens.length === 0 && (
